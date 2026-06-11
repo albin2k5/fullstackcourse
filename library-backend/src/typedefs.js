@@ -1,19 +1,19 @@
-import { gql } from '@apollo/server';
+// Remove the broken '@apollo/server' import line from the top completely!
 
-export const typeDefs = gql`
-  type Author {
-    name: String!
-    born: Int
-    bookCount: Int!
-    id: ID!
-  }
-
+export const typeDefs = `#graphql
   type Book {
     title: String!
     published: Int!
     author: String!
-    genres: [String!]!
     id: ID!
+    genres: [String!]!
+  }
+
+  type Author {
+    name: String!
+    id: ID!
+    born: Int
+    bookCount: Int!
   }
 
   type Query {
